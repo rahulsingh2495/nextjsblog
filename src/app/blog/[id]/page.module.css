@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300&family=Roboto:ital,wght@0,100;1,100&display=swap');
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin: 100px 0;
+}
+
+.box1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.bloggerName {
+    text-transform: uppercase;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+.blogContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    flex: 1;
+}
+
+.bloggerInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+}
+
+.blogPara {
+    font-family: 'Roboto', sans-serif !important;
+    font-family: bold !important;
+    font-size: 17px;
+    text-align: justify;
+}
+
+.box2 p {
+    font-family: 'Roboto', sans-serif !important;
+    font-family: bold !important;
+    font-size: 17px;
+    text-align: justify;
+}
+
+
+.blogContent h2 {
+    font-size: 50px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.bloggerImage {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+}
+
+.bloggerInfo {
+    flex: 1;
+}

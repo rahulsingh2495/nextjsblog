@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300&family=Roboto:ital,wght@0,100;1,100&display=swap');
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 30px auto;
+}
+
+.heading h1 {
+    font-size: 60px;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 30px auto;
+}
+
+.heading {
+    margin: 30px auto;
+}
+
+.heading2 h4 {
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.works {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+    margin: 0px auto;
+}
+
+.grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.img {
+   width: 300px;
+   height: 400px;
+   border: 5px solid grey;
+   border-radius: 5px;
+   opacity: 0.7;
+}
+
+.img:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.imgContainer {
+    position: relative;
+}
+
+.pheading1 {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 22px;
+    line-height: 27px;
+}
