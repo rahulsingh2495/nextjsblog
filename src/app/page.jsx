@@ -2,6 +2,18 @@ import Image from "next/image";
 import React from "react";
 import HomeImg from "public/hero.png";
 import styles from "./page.module.css";
+import { db } from "@/utils/db";
+
+// Rest of your server setup and routes
+
+// Close the MongoDB connection when the application is terminated
+process.on("SIGINT", () => {
+  db.close(() => {
+    console.log("MongoDB connection closed.");
+    process.exit(0);
+  });
+});
+
 
 const page = () => {
   return (

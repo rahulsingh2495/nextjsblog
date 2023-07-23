@@ -9,11 +9,12 @@
     font-size: 35px;
     text-transform: uppercase;
     color: red;
+    text-align: start;
 }
 
 .items {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 50px;
 }
 

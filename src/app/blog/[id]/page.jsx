@@ -3,10 +3,10 @@ import styles from "./page.module.css";
 import Image from "next/image";
 import blogimage from "public/android.jpg";
 import person from "public/person.jpg";
-import {notFound} from "next/navigation";
+import { notFound } from "next/navigation";
 
 async function getData(id) {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
     cache: "no-store",
   });
   // The return value is *not* serialized
@@ -21,6 +21,15 @@ async function getData(id) {
   return res.json();
 }
 
+// or Dynamic metadata
+export async function generateMetadata({ params }) {
+  const post = await getData(params.id);
+  return {
+    title: post.title,
+    description: post.desc,
+  };
+}
+
 const BlogPost = async ({ params }) => {
   const data = await getData(params.id);
   return (
@@ -28,7 +37,7 @@ const BlogPost = async ({ params }) => {
       <div className={styles.box1}>
         <div className={styles.blogContent}>
           <h2>{data.title}</h2>
-          <p className={styles.blogPara}>{data.body}</p>
+          <p className={styles.blogPara}>{data.desc}</p>
           <div className={styles.bloggerInfo}>
             <Image
               src={person}
@@ -39,12 +48,12 @@ const BlogPost = async ({ params }) => {
           </div>
         </div>
         <div className={styles.blogImage}>
-          <Image src={blogimage} alt="blog image" />
+          <Image src={data.img} alt="blog image" width={600} height={400} />
         </div>
       </div>
 
       <div className={styles.box2}>
-        <p>{data.body}</p>
+        <p>{data.content}</p>
       </div>
     </div>
   );
