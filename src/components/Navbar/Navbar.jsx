@@ -1,7 +1,8 @@
 import Link from "next/link";
 import React from "react";
 import styles from "./navbar.module.css";
-import Darkmode from '../DarkModeToggle/DarkModeToggle'
+import Darkmode from "../DarkModeToggle/DarkModeToggle";
+import { signOut } from "next-auth/react";
 
 const Navbar = () => {
   return (
@@ -10,7 +11,7 @@ const Navbar = () => {
         <h1>MODERN BLOG</h1>
       </div>
       <div className={styles.links}>
-      <Darkmode />
+        <Darkmode />
         <Link href={"/"} className={styles.link}>
           Home
         </Link>
@@ -29,9 +30,11 @@ const Navbar = () => {
         <Link href={"/portfolio"} className={styles.link}>
           Portfolio
         </Link>
-        <button className={styles.logout}><Link href={"/contact"} className={styles.link}>
-          Logout
-        </Link></button>
+        <button className={styles.logout}>
+          <Link href={"/contact"} className={styles.link} onClick={signOut}>
+            Logout
+          </Link>
+        </button>
       </div>
     </div>
   );
